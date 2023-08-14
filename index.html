@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,500;9..144,700&display=swap" rel="stylesheet">
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | Product preview card component</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+
+    body{
+      margin: 0;
+      width: 100%;
+      background: hsl(30, 38%, 92%);
+    }
+    .container{
+      display: grid;
+      grid-template-rows: 1fr auto;
+      place-items: center;
+      width: 100%;
+      height: 100vh;
+    }
+    .carta{
+      display: grid;
+      grid-template-columns: 50% 50%;
+      width: 700px;
+      height: 500px;
+      background: hsl(0, 0%, 100%);
+      border-radius: 20px;
+      overflow: hidden;
+    }
+    .carta-imagen{
+      width: 350px;
+      height: 500px;
+      object-fit: cover;
+    }.carta-imagen img{
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .carta-descripcion{
+      width: 100%;
+      height: 100%;
+      margin: 0;
+      padding: 10%;
+      box-sizing: border-box;
+      display: grid;
+      grid-template-rows: auto auto auto auto auto;
+    }.carta-descripcion > p:nth-child(1){
+      color: hsl(228, 12%, 48%);
+      font-size: 1rem;
+      font-family: 'Montserrat', sans-serif;
+      margin: 0;
+    }
+    .carta-descripcion > p:nth-child(2){
+      color: hsl(212, 21%, 14%);
+      font-family: 'Fraunces', serif;
+      font-size: 2.5rem;
+      line-height: 1em;
+      font-weight: bold;
+      margin: 20px 0;
+    }.carta-descripcion > p:nth-child(3){
+      color: hsl(228, 12%, 48%);
+      font-size: 1em;
+      line-height: 1.5em;
+      font-family: 'Montserrat', sans-serif;
+      margin: 0;
+    }
+    .precio{
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+    }.precio > p:nth-child(1){
+      font-family: 'Fraunces', serif;
+      font-size: 2rem;
+      font-weight: bold;
+      color: hsl(158, 36%, 37%);
+    }
+    .precio > p:nth-child(2){
+      font-family: 'Montserrat', sans-serif;
+      font-size: .9rem;
+      color: hsl(228, 12%, 48%);
+      text-decoration: line-through;
+    }
+    .primary-button{
+      padding: 0;
+      display: flex;
+      width: 100%;
+      height: 40px;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      background: hsl(158, 36%, 37%);
+      border: none;
+      border-radius: 8px;
+    }
+    .primary-button:hover{
+      cursor: pointer;
+      background: hsl(157, 41%, 21%);
+    }.primary-button p{
+      font-size: small;
+      font-weight: bold;
+      color: hsl(0, 0%, 100%);
+      font-family: 'Montserrat', sans-serif;
+    }
+    @media (max-width: 640px) {
+      .carta{
+        position: relative;
+        width: 340px;
+        height: 620px;
+      }.carta-imagen{
+        position: absolute;
+        top: 0;
+        width: 340px;
+        height: 40%;
+      }.carta-descripcion{
+        position: absolute;
+        top: 40%;
+        width: 340px;
+        height: 60%;
+      }.carta-descripcion > p:nth-child(1){
+        font-size: .8rem;
+      }
+      .carta-descripcion > p:nth-child(2){
+        font-size: 1.9rem;
+      }.carta-descripcion > p:nth-child(3){
+        font-size: .8em;
+      }
+      .precio > p:nth-child(1){
+        margin: 20px 0 10px 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <div class="container">
+      <div class="carta">
+        <div class="carta-imagen">
+          <img src="./images/image-product-desktop.jpg" alt="">
+        </div>
+        <div class="carta-descripcion">
+          <p>P E R F U M E</p>
+          <p>Gabrielle Essence Eau De Parfum</p>
+          <p>A floral, solar and voluptuous interpretation composed by Olivier Polge, 
+            Perfumer-Creator for the House of CHANEL.</p>
+          <div class="precio">
+            <p>$149.99</p>
+            <p>$169.99</p>
+          </div>
+          <button class="primary-button">
+            <img src="./images/icon-cart.svg" alt="">
+            <p>Add to Cart</p>
+          </button>
+        </div>
+      </div>
+      <div class="attribution">
+        Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+        Coded by <a href="#">Bruno Moreno</a>.
+      </div>
+    </div>
+    
+  </main>
+</body>
+</html>
